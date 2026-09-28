@@ -1,6 +1,24 @@
-# UML Outline for TFTP Server Program
+# TFTP Server
+A TFTP (Trivial File Transfer Protocol) client and server implementation in Java.
 
-## TFTPServer Class
+## Project 🌳
+```
+.
+└── src
+    ├── Block.java
+    ├── Blocks.java
+    ├── Makefile
+    ├── OpCode.java
+    ├── RFC-1350-Standards.txt
+    ├── server
+    ├── Tftp.java
+    ├── TftpClient.java
+    └── TftpServer.java
+```
+
+### Usage
+
+#### TFTPServer Class
 
 | **Attributes**       | **Type**        |
 |----------------------|-----------------|
@@ -16,7 +34,7 @@
 | `reTransmit`                | `int`                                | `void`     |
 | `handleTransfer`            | `InetAddress, int, File`             | `void`     |
 
-## TFTPClient Class
+#### TFTPClient Class
 
 | **Attributes**  | **Type**        |
 |-----------------|-----------------|
@@ -33,7 +51,7 @@
 | `checkEOF`                  | `byte[]`                 | `void`     |
 | `handleLoss`                |                          | `void`     |
 
-## PacketHandler Class
+#### PacketHandler Class
 
 | **Attributes** | **Type**         |
 |----------------|------------------|
@@ -47,7 +65,7 @@
 | `createError`               | `int, String`                   | `byte[]`   |
 | `parsePacket`               | `DatagramPacket`                | `void`     |
 
-## FileHandler Class
+#### FileHandler Class
 
 | **Attributes** | **Type** |
 |----------------|----------|
@@ -59,3 +77,7 @@
 | `readBlock`                 | `int, int`                  | `byte[]`   |
 | `writeBlock`                | `byte[], int`               | `void`     |
 | `isEOF`                     | `byte[]`                    | `boolean`  |
+
+## Commands
+1. To start the server use `java TftpServer`.
+2. To start the client use `java TftpClient`.
